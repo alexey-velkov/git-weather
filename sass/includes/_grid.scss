@@ -1,0 +1,84 @@
+.container {
+  margin: 0 auto;
+  @include all(max-width, $container-width);
+  @include all(padding-right, 1.5);
+  @include all(padding-left, 1.5);
+  width: 100%;
+  &--fluid {
+      max-width: inherit;
+  }
+  &__small {
+      @include all(max-width, 68);
+  }
+  &__medium {
+      @include all(max-width, 80);
+  }
+  &__large {
+      @include all(max-width, 120);
+  }
+  & & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.grid {
+  @include all(margin-right, -1.5);
+  @include all(margin-left, -1.5);
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  position: relative;
+  &-start {
+    justify-content: flex-start;
+  }
+  &-sm-line {
+    @include mobile {
+      border-bottom: 1px solid #eee;
+      @include all(padding-bottom, 2);
+      @include all(margin-bottom, 2);
+    }
+  }
+}
+
+.grid [class^="grid-"],
+.grid [class*="grid-"] {
+  @include all(padding, 1.5);
+  overflow: hidden;
+  min-height: 1px;
+}
+
+$grid: 100%;
+$grid-size: 12;
+$grid-value: $grid / $grid-size;
+@media only screen and (max-width: 767px) {
+  @for $i from 1 through $grid-size {
+      .grid-#{"sm-"+$i} {
+          width: $i * $grid-value;
+      }
+  }
+}
+@media only screen and (max-width: 479px) {
+  @for $i from 1 through $grid-size {
+      .grid-#{"xs-"+$i} {
+          width: $i * $grid-value;
+      }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  @for $i from 1 through $grid-size {
+      .grid-#{"md-"+$i} {
+          width: $i * $grid-value;
+      }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  @for $i from 1 through $grid-size {
+      .grid-#{"lg-"+$i} {
+          width: $i * $grid-value;
+      }
+  }
+}

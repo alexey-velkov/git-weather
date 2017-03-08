@@ -1,0 +1,260 @@
+@import "includes/normalize";
+@import "includes/fonts";
+
+@import "includes/variables";
+@import "includes/mixin";
+@import "includes/media";
+@import "includes/utilities";
+
+@import "includes/animate";
+@import "includes/base";
+@import "includes/buttons";
+@import "includes/check";
+@import "includes/grid";
+@import "includes/forms";
+@import "includes/dropdown";
+
+.sidebar {
+	@extend .element__cell;
+	min-width: 150px;
+	width: 150px;
+	@include mobile {
+		width: 60px;
+		min-width: 60px;
+	}
+}
+
+.nav-menu {
+	position:fixed;
+	top:0;
+	left:0;
+	padding: 25px 0 40px 0;
+	width: 150px;
+	min-width: 150px;
+	height: 100%;
+	@extend .element__flex, .element__flex__column, .element__flex__between;
+	@include mobile {
+		width: 60px;
+		min-width: 60px;
+		padding: 10px 0;
+	}
+	&__list {
+		@extend .text__center, .element__flex, .element__flex__column, .element__flex__start;
+		width: 100%;
+		height: 100%;
+		&_link {
+			@extend .element__relative, .element__flex;
+			width: 100%;
+			height: 100%;
+			color: $color-lite-gray;
+			font-size: 24px;
+			max-height: 65px;
+			margin: 15px 0;
+			&::after {
+				content: none;
+				display: block;
+				position: absolute;
+				top: 0;
+				right: -1px;
+				width: 3px;
+				height: 100%;
+				background: #000;
+			}
+			&:hover {
+				background: rgba(0,0,0, 0.05);
+				color: $color-black;
+				&::after {
+					content: "";
+				}
+			}				
+		}
+	}
+	&__logo {
+		@extend .element__inline;
+		padding-top: 15px;
+		@include mobile-height {
+			display: none;
+		}
+		& svg {
+			@include mobile {
+				width: 42px;
+				height: 42px;
+			}
+		}
+	}
+}
+
+
+.content {
+		@extend .element__cell;
+		background-color: #f1f1f1;
+		padding: 40px;
+		@include mobile {
+			padding: 15px;
+		}
+		&__header {
+			@extend .element__flex, .element__flex__between;
+			&__social {
+				@extend .element__flex;
+				&--face {
+					border-radius: 50%;
+					overflow: hidden;	
+					margin-left: 23px;
+					@include mobile {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+		&__article {
+			&__section {
+				@extend .element__relative;
+				background-color: $color-white;
+				color: $color-green;
+				border-radius: 5px;
+				padding: 50px;	
+				height: 100%;
+				@include tablet {
+					padding: 30px;
+				}
+				@include mobile {
+					padding: 15px;
+				}
+				&--center {
+					@extend .text__center;
+				}
+				&--thermometer {
+					margin-bottom: 40px;
+					display: inline-block;
+					font-size: 24px;
+				}
+				&--celsius {
+					margin-bottom: 50px;
+				}
+				&--adjust {
+					@extend .element__relative;
+					.arrows {
+						@extend .element__absolute;
+						top: -18px;
+						left: 35px;
+						border-radius: 50px;
+						padding: 8px 5px;
+						background-color: $color-white;
+						box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+					}
+
+				}
+				&--week {
+					@extend .element__flex, .element__flex__between, .text__center;
+					padding: 25px;
+					@include mobile {
+						display:flex;
+						flex-direction: column;
+						padding: 15px;
+					}
+				}
+				&--weather {       
+				     @extend .element__flex, .element__flex__column, .element__flex__between;
+					width: 100%;
+					height: 100%;
+					padding: 50px 0;
+					border-radius: 5px;
+					color: $color-black;
+					font-size: 18px;
+					color: $color-green;
+					text-decoration: none;
+					&:hover {
+						background-color: $color-green-hover;
+						color: $color-black;
+					}
+					@include tablet {
+						padding: 10px 5px;
+					}
+					@include mobile {
+					 padding: 0;
+					   flex-direction: row;
+   						padding: 15px;
+					}
+					
+					.weather-img {
+						color: #fcbf5f;
+						padding: 10px 0;
+						@include desktop {
+							font-size: 40px;
+						}
+					}
+				}
+			}
+		}
+		&__footer {
+			&__switch {
+				@extend .element__flex, .element__flex__between, .element__relative;
+				padding: 28px 30px;
+				background-color: $color-white;
+				border-radius: 5px;
+				&:first-child {
+					margin-bottom: 30px;
+				}
+				@include desktop-max {
+					padding: 15px;
+				}
+				@include mobile {
+					padding: 10px;
+				}
+				.switch-label {
+					@extend .element__flex;
+					font-size: 18px;
+					@include tablet {
+						font-size: 14px;
+					}
+					&__icon {
+						font-size: 24px;
+						color: $color-lite-gray;
+					} 
+					& > span {
+						padding-right: 15px;
+						@include desktop-max {
+							padding-right: 10px;
+						}
+					}
+				}
+
+			}
+			&__img {
+				@extend .element__relative;
+				width: 100%;
+				cursor: pointer;
+				img {
+					width: 100%;
+				}
+				& .fa-expand {
+					@extend .element__absolute, .element__flex;
+					top:50%;
+					left:50%;
+					width: 38px;
+					height: 38px;
+					margin-top: -19px;
+					margin-left: -19px;
+					background-color: $color-white;
+					border-radius: 3px;
+					align-items: center;
+					visibility: hidden;
+					opacity: 0;
+					-webkit-transition: all 0.2s ease-out 0s;
+					-moz-transition: all 0.2s ease-out 0s;
+					transition: all 0.2s ease-out 0s;
+
+					-webkit-transform: scale(0);
+					-moz-transform: scale(0);
+					transform: scale(0);
+				}
+				&:hover .fa-expand {
+					visibility: visible;
+					opacity: 1;
+					-webkit-transform: scale(1);
+					-moz-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+		}
+	}

@@ -1,0 +1,48 @@
+.dropdown {
+	@extend .element__relative;
+	display: inline-block;
+	&__menu {
+		@extend .element__absolute;
+		background-color: $color-white;
+		border-radius: 0 0 5px 5px;
+		border-top: 1px solid #eee;
+		box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+		visibility: hidden;
+		opacity: 0.3;
+		z-index: -1;
+	    top: 70px;
+	    left: 0;
+	    width: 100%;
+		-webkit-transition: all 0.3s ease 0s;
+	    -moz-transition: all 0.3s ease 0s;
+	    -o-transition: all 0.3s ease 0s;
+	    transition: all 0.3s ease 0s;
+		&--item {
+			@extend .element__block;
+			padding: 10px 20px;
+			color: $color-green;
+			&:hover {
+				background-color: $color-green-hover;
+				color: $color-black;
+				border-radius: 5px;
+			}
+			@include mobile {
+				font-size: 12px;
+				padding: 5px 10px;
+			}
+
+		}
+	}
+	&:hover &__menu {
+		top: 40px;
+		opacity: 1;
+		visibility: visible;
+		z-index: 1;
+		@include mobile {
+			top: 25px;
+		}
+	}
+	&:hover &__button {
+		border-radius: 5px 5px 0 0;
+	}
+}

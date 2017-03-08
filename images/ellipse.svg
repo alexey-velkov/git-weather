@@ -1,0 +1,28 @@
+<svg id="intercom" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d3d3d3;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="38" cy="18" r="3"/>
+  <circle id="Ellipse_3_copy_4" data-name="Ellipse 3 copy 4" class="cls-1" cx="38" cy="3" r="3"/>
+  <circle id="Ellipse_3_copy" data-name="Ellipse 3 copy" class="cls-1" cx="38" cy="38" r="3"/>
+  <circle id="Ellipse_3_copy_2" data-name="Ellipse 3 copy 2" class="cls-1" cx="38" cy="58" r="3"/>
+  <circle id="Ellipse_3_copy_3" data-name="Ellipse 3 copy 3" class="cls-1" cx="38" cy="73" r="3"/>
+  <circle id="Ellipse_3_copy_5" data-name="Ellipse 3 copy 5" class="cls-1" cx="55" cy="68" r="3"/>
+  <circle id="Ellipse_3_copy_6" data-name="Ellipse 3 copy 6" class="cls-1" cx="53" cy="48" r="3"/>
+  <circle id="Ellipse_3_copy_7" data-name="Ellipse 3 copy 7" class="cls-1" cx="54" cy="28" r="3"/>
+  <circle id="Ellipse_3_copy_8" data-name="Ellipse 3 copy 8" class="cls-1" cx="55" cy="9" r="3"/>
+  <circle id="Ellipse_3_copy_9" data-name="Ellipse 3 copy 9" class="cls-1" cx="68" cy="21" r="3"/>
+  <circle id="Ellipse_3_copy_10" data-name="Ellipse 3 copy 10" class="cls-1" cx="68" cy="58" r="3"/>
+  <circle id="Ellipse_3_copy_11" data-name="Ellipse 3 copy 11" class="cls-1" cx="73" cy="40" r="3"/>
+  <circle id="Ellipse_3_copy_12" data-name="Ellipse 3 copy 12" class="cls-1" cx="21" cy="68" r="3"/>
+  <circle id="Ellipse_3_copy_12-2" data-name="Ellipse 3 copy 12" class="cls-1" cx="22" cy="48" r="3"/>
+  <circle id="Ellipse_3_copy_12-3" data-name="Ellipse 3 copy 12" class="cls-1" cx="22" cy="28" r="3"/>
+  <circle id="Ellipse_3_copy_12-4" data-name="Ellipse 3 copy 12" class="cls-1" cx="21" cy="9" r="3"/>
+  <circle id="Ellipse_3_copy_12-5" data-name="Ellipse 3 copy 12" class="cls-1" cx="8" cy="21" r="3"/>
+  <circle id="Ellipse_3_copy_12-6" data-name="Ellipse 3 copy 12" class="cls-1" cx="8" cy="58" r="3"/>
+  <circle id="Ellipse_3_copy_12-7" data-name="Ellipse 3 copy 12" class="cls-1" cx="3" cy="40" r="3"/>
+</svg>

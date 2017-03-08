@@ -1,0 +1,75 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@mixin all ($property, $values) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+  @for $i from 1 through $max {
+      $value: strip-unit(nth($values, $i));
+      $pxValues: #{$pxValues + $value*10}px;
+      @if $i < $max {
+          $pxValues: #{$pxValues + " "};
+      }
+  }
+  @for $i from 1 through $max {
+      $value: strip-unit(nth($values, $i));
+      $remValues: #{$remValues + $value}rem;
+      @if $i < $max {
+          $remValues: #{$remValues + " "};
+      }
+  }
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding: ($top*10)+px ($right*10)+px ($bottom*10)+px ($left*10)+px;
+  padding: $top+rem $right+rem $bottom+rem $left+rem;
+}
+@mixin margin($top, $right, $bottom, $left) {
+  margin: ($top*10)+px ($right*10)+px ($bottom*10)+px ($left*10)+px;
+  margin: $top+rem $right+rem $bottom+rem $left+rem;
+}
+
+
+$margin: 5rem;
+$value: 10;
+$margin-value: $margin / $value;
+
+@for $i from 1 through 10 {
+  .offset-#{("top-" + ($i*10) / 2)} {
+      margin-top: ($i * 10) / 2 + px;
+      margin-top: $i * $margin-value;
+  }
+}
+
+@for $i from 1 through 10 {
+  .offset-#{("bottom-" + ($i * 10) / 2)} {
+      margin-bottom: ($i * 10) / 2 + px;
+      margin-bottom: $i * $margin-value;
+  }
+}
+
+$offset: 100%;
+$offset-size: 12;
+$offset-value: $offset / $offset-size;
+
+@for $i from 1 through 6 {
+  .offset-#{"left-" + $i} {
+    margin-left: $i * $offset-value;
+  }
+}
+@for $i from 1 through 6 {
+  .offset-#{"right-" + $i} {
+    margin-right: $i * $offset-value;
+  }
+}
+
+@mixin transition($property, $duration, $timing, $delay) {
+  -webkit-transition: $property $duration + s $timing $delay + s;
+  -moz-transition: $property $duration + s $timing $delay + s;
+  -o-transition: $property $duration + s $timing $delay + s;
+  transition: $property $duration + s $timing $delay + s;
+}

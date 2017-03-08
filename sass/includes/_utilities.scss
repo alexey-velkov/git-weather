@@ -1,0 +1,149 @@
+.font {
+    &__light {
+        font-family: $font-light, sans-serif;
+    }
+    &__normal {
+        font-family: $font-normal, sans-serif;
+    }
+    &__semi-bold {
+        font-family: $font-semi-bold, sans-serif;
+    }
+    &__bold {
+        font-family: $font-bold, sans-serif;
+    }
+    &__extra {
+        font-family: $font-extra, sans-serif;
+    }
+}
+
+.color {
+    &__white {
+        color: $color-white;
+    }
+    &__black {
+        color: $color-black;
+    }
+    &__orange {
+        color: $color-orange;
+    }
+    &__gray {
+        color: $color-gray;
+    }
+    &__green {
+        color: $color-green;
+    }
+    &__red {
+        color: $color-red;
+    }
+    &__blue {
+        color: $color-blue;
+    }
+    &__blue--hover {
+        color: $color-blue-hover;
+    }
+}
+
+.text {
+    &__uppercase {
+        text-transform: uppercase;
+    }
+    &__lowercase {
+        text-transform: inherit;
+    }
+    &__line {
+        text-decoration: underline;
+    }
+    &__inline {
+        text-decoration: none;
+    }
+    &__left {
+        text-align: left;
+    }
+    &__right {
+        text-align: right;
+    }
+    &__center {
+        text-align: center;
+        &__mobile {
+            @include mobile {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.element {
+    &__relative {
+        position: relative;
+    }
+    &__absolute {
+        position: absolute;
+    }
+    &__fixed {
+        position: fixed;
+    }
+    &__block {
+        display: block;
+    }
+    &__inline {
+        display: inline-block;
+    }
+    &__none {
+        display: none;
+    }
+    &__table {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+    &__cell {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+    }
+    &__flex {
+        align-items: center;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        justify-content: center;
+        &__column {
+            flex-direction: column;
+        }
+        &__start {
+            justify-content: flex-start;
+        }
+        &__end {
+            justify-content: flex-end;
+        }
+        &__between {
+            justify-content: space-between;
+        }
+        &__center {
+            justify-content: center;
+        }
+        &--start {
+            align-items: flex-start;
+        }
+        &--end {
+            align-items: flex-end;
+        }
+        &__flow {
+            flex-flow: row wrap;
+        }
+    }
+}
+
+.vertical {
+    &__top {
+        vertical-align: top;
+    }
+    &__bottom {
+        vertical-align: bottom;
+    }
+    &__middle {
+        vertical-align: middle;
+    }
+}
+

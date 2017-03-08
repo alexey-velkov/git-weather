@@ -1,0 +1,53 @@
+.form-input {
+    @extend .font__light;
+    background-color: #fff;
+    border: 2px solid #e3f2fd;
+    border-radius: .3rem;
+    color: $color-gray;
+    width: 100%;
+    @include all(font-size, 1.6);
+    @include all(padding, 1.5);
+    &:focus {
+        border-color: $color-red;
+    }
+    &__icon {
+        position: relative;
+        & .form-input {
+            padding-right: 4rem;
+            &:focus + span > svg {
+                fill: red !important;
+            }
+        }
+        &__svg {
+            @extend .element__absolute;
+            /*background: url("../images/arrow-input.svg") no-repeat scroll 0 0 transparent;*/
+            display: block;
+            width: 21px;
+            right: 10px;
+            height: 10px;
+            margin-top: -5px;
+            top: 50%;
+            svg {
+                fill: $color-green;
+            }
+        }
+    }
+    &__group {
+        @extend .element__flex;
+        @include all(margin-bottom, 2);
+        @include mobile {
+            display: block;
+        }
+        &__item {
+            width: 100%;
+            @include all(margin-right, 2);
+            &:last-child {
+                margin-right: 0;
+            }
+            @include mobile {
+                margin-right: 0;
+                @include all(margin-bottom, 2);
+            }
+        }
+    }
+}

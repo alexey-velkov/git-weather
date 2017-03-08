@@ -1,0 +1,96 @@
+.button {
+	@extend .element__inline, .font__normal, .text__center;
+	background-color: $color-white;
+	border-radius: 0.5rem;
+	border: 0;
+	color: $color-gray;
+	cursor: pointer;
+	@include all(font-size, 1.4);
+	@include padding(1, 2, 1, 2);
+	@include mobile {
+		@include all(font-size, 1);
+		@include padding(0.5, 1, 0.5, 1);
+	}
+	&__setting {
+		@extend .element__absolute;
+		background-color: $color-white;
+		top: 10px;
+		right: 10px;
+		font-size: 14px;
+		text-decoration: none;
+		@include mobile {
+			font-size: 12px;
+		}
+		&:hover {
+			background-color: $color-white-hover;
+			color: $color-gray;
+		}
+		&--large {
+			font-size: 18px;
+			@include mobile {
+				font-size: 14px;
+			}
+		}
+		&--initial {
+			position: initial;
+		}
+	}
+	&--orange {
+		background-color: $color-orange;
+		color: #fff;
+		&:hover {
+			background-color: $color-orange-hover;
+		}
+	}
+	&--red {
+		background-color: $color-red;
+		color: #fff;
+		&:hover {
+			background-color: $color-red-hover;
+		}
+	}
+	&--blue {
+		background-color: $color-blue;
+		color: #fff;
+		&:hover {
+			background-color: $color-blue-hover;
+		}
+	}
+	&--green {
+		background-color: $color-green;
+		color: #fff;
+		&:hover {
+			background-color: $color-green-hover;
+		}
+	}
+	&:active {
+		box-shadow: 0 1px 5px rgba(0,0,0, 0.2) inset;
+	}
+	&__group {
+		@extend .element__flex;
+		&__center {
+			@extend .element__flex__center;
+		}
+		&__start {
+			@extend .element__flex__start;
+		}
+		&__end {
+			@extend .element__flex__end;
+		}
+		&__between {
+			@extend .element__flex__between;
+		}
+		&__item {
+			margin-right: 1.5rem;
+			&:last-child {
+				margin-right: 0;
+			}
+			@mobile {
+				margin-bottom: 1.5rem;
+			}
+			& .button {
+				@extend .button__group__item;
+			}
+		}
+	}
+}

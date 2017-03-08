@@ -1,0 +1,134 @@
+html {
+    font-size: 62.5%; 
+}
+
+html,
+body {
+    @extend .font__normal, .color__black;
+    height: 100%;
+}
+
+img,
+iframe,
+object {
+    max-width: 100%;
+}
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    outline: 0;
+/*    @include transition(color, 0.1, ease-in-out, 0);*/
+ }
+
+input:required,
+textarea:required {
+    box-shadow: none;
+}
+[class*="container"] {
+    @extend .element__relative;
+}
+
+ul, p {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p, li {
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+a {
+    text-decoration: none !important;
+    &:hover {
+        text-decoration: none !important;
+    }
+    &:focus {
+        color: inherit;
+        outline: initial;
+        outline-offset: initial;
+    }
+}
+
+[class*="header__"] {
+    @extend .text__uppercase;
+    line-height: 1.5em;
+    @include margin(1, 0, 1.5, 0);
+}
+.header {
+    &__small {
+        @extend .font__light;
+        @include all(font-size, 2);
+    }
+    &__medium {
+        @extend .font__bold, .text__center;
+        @include all(font-size, 2.4);
+    }
+    &__large {
+        @extend .font__semi-bold;
+        @include all(font-size, 6);
+        @include all(line-height, 3.0);
+        color: $color-black;
+        @include tablet {
+            font-size: 40px;
+        }
+        & span {
+            font-size: 25px;
+             color: $color-green;
+             margin-left: 10px;
+             text-transform: lowercase;
+             @extend .font__bold;
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+    }
+    &__xlarge {
+        @include all(font-size, 9.7);
+        line-height: 1.5em;
+        color: $color-black;
+        display: flex;
+        @include tablet {
+            font-size: 60px;
+            justify-content: center;
+        }
+        & span {
+            font-size: 70px;
+            color: $color-green;
+            @include tablet {
+                font-size: 45px;
+            }
+            @include mobile {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+.modal {
+    [class*="header__"] {
+        margin: 0;
+    }
+    &-header {
+        position: relative;
+        padding-right: 35px;
+    }
+    & .close {
+        background: transparent;
+        border: 0;
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        color: #999;
+        margin-top: -8px;
+    }
+}
